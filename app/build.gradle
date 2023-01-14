@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.application'
+    id 'com.huawei.agconnect'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.first.a1806957'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.first.a1806957"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    signingConfigs {
+        config {
+            storeFile file("C:/Users/Kareem's Laptop/Desktop/1806957/key.jks")
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'key0'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+        lintOptions {
+            baseline(file("lint-baseline.xml"))
+        }
+    
+}
+
+dependencies {
+    implementation 'com.huawei.agconnect:agconnect-auth:1.7.3.300'
+    implementation 'com.huawei.agconnect:agconnect-core:1.7.3.300'
+    implementation 'com.huawei.hms:hwid:6.8.0.300'
+    implementation 'com.huawei.hms:location:6.8.0.300'
+    implementation 'com.huawei.hms:maps-basic:6.8.1.301'
+    implementation 'com.huawei.hms:maps:6.8.1.301'
+    implementation 'com.hbb20:ccp:2.6.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:+'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}
+
+apply plugin: 'com.huawei.agconnect'

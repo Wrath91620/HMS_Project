@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <application  android:theme="@style/AppTheme"
+        android:allowBackup="true" android:dataExtractionRules="@xml/data_extraction_rules" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true"  tools:targetApi="31">
+        <activity android:name=".MainActivity" android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <meta-data android:name="com.huawei.hms.client.channel.androidMarket" android:value="false" />
+        <meta-data android:name="com.huawei.hms.client.appid" android:value = "107536379"/>
+        <meta-data  android:name="com.huawei.hms.maps.APP_KEY"
+            android:value="DAEDADClrZ065CAYnjHzS+Z8AwhUUYpQNDoLYsxi/064kBb5Fz7JALZJ1ccrD0qmonJ8auGTHXgp9/kv/zU/qa+l5oHZFU88CLejsg=="/>
+        <activity android:name=".SecondActivity" android:exported="true"/>
+        <activity android:name=".ThirdActivity" android:exported="true"/>
+
+        <meta-data
+            android:name="com.huawei.hms.client.api.APP_KEY"
+            android:value="691F69600D96CCED688C17A31BCFE295213DED0757900A172678C60DBD950536" />
+
+    </application>
+    <!--check network permissions-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--check wifi state-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <queries>
+        <intent>
+            <action android:name="com.huawei.hms.core.aidlservice" />
+        </intent>
+    </queries>
+</manifest>
+
