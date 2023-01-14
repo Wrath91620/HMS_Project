@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = '1.6.0'
+    }
+    dependencies {
+        // Add the Android Gradle plugin configuration, where {version} needs to be replaced with the actual Gradle plugin version, for example, 7.3.1.
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        // Add the AppGallery Connect plugin configuration. Please refer to AppGallery Connect Plugin Dependency to select a proper plugin version.
+        classpath 'com.huawei.agconnect:agcp:1.7.3.300'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+    }
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
+
+
+
+
+plugins {
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+}
+allprojects {
+    repositories {
+        // Add the Maven address.
+        maven {url 'https://developer.huawei.com/repo/'}
+        mavenCentral()
+        google()
+    }
+}
+//android {
+//    lintOptions {
+//        baseline(file("lint-baseline.xml"))
+//    }
+//}
