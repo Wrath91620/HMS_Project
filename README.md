@@ -4,4 +4,4 @@
 
 Please note during the debugging shown in the video, the HMS Location Kit gave an error from the HMS servers that couldn't render the map correctly. 
 Also, the unsuccessful login process was to show the error messages that display when a user enters wrong credintials. 
-Missing components of the projects could not be done due to the lack of time, but they are included in the source code. 
+Missing components of the projects could not be done due to the lack of time like the ML Kit. Other missing components like the charging station API and the logout toolbar in the second screen exist in the source code.  
